@@ -5,31 +5,40 @@ import Fifth.*;
 public class SubCarTwo extends CarClass implements CarInterface{
 	public SubCarTwo(){
 		super();
-		manufactureName = "something";
-		manufactureYear = 1234;
+		
 	}
-
+	
+	public SubCarTwo(String carName) {
+		super(carName);
+	}
+	
+	public SubCarTwo(String manu, String model, String key, int engineCC, float fuel) {
+		super(manu, model, key, engineCC, fuel);
+	}
+	
+	public SubCarTwo(String manu, String model, String key, int engineCC, float fuel, int year) {
+		super(manu, model, key, engineCC, fuel, year);
+	}
+	
 	@Override
 	public void driveCar(int driveTime) {
-		// TODO Auto-generated method stub
-		
+		runForSec(driveTime);
 	}
 
 	@Override
-	public void addFuleAmout() {
-		// TODO Auto-generated method stub
-		
+	public void addFuleAmout(int amout) {
+		addFuel(amout);
 	}
 
 	@Override
 	public int getManufactureYear() {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return manufactureYear;
 	}
 
 	@Override
 	public String getCarModelName() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return getModelName();
 	}
 }
